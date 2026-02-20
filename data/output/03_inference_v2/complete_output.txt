@@ -1,0 +1,42 @@
+======================================================================
+COMPONENT 3: INFERENCE STARTED (Keras NN)
+======================================================================
+
+STEP 1: LOAD MODEL
+Loaded model from: examples/tourism_nn_model.h5
+
+STEP 2: LOAD PREPROCESSING ARTIFACTS
+Loaded feature columns: 26
+Loaded scaler: StandardScaler
+
+STEP 3: LOAD TEST DATA
+Test file shape: (802, 19)
+
+STEP 4: ENCODE + ALIGN + SCALE
+
+STEP 5: PREDICT + EVALUATE
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 32ms/step[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1ms/step 
+Test Accuracy: 0.85785536159601
+Test AUC: 0.8676023333499527
+
+Confusion Matrix:
+ [[600  47]
+ [ 67  88]]
+
+Classification Report:
+               precision    recall  f1-score   support
+
+           0     0.8996    0.9274    0.9132       647
+           1     0.6519    0.5677    0.6069       155
+
+    accuracy                         0.8579       802
+   macro avg     0.7757    0.7475    0.7601       802
+weighted avg     0.8517    0.8579    0.8540       802
+
+
+STEP 6: SAVE PREDICTIONS
+Saved predictions to: data/output/03_inference_v2/predictions.csv
+
+======================================================================
+COMPONENT 3: INFERENCE COMPLETE
+======================================================================

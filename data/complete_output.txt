@@ -1,0 +1,95 @@
+======================================================================
+DATA PREPARATION STARTED
+======================================================================
+
+======================================================================
+STEP 1: DATA LOADING
+======================================================================
+
+Dataset shape: 3208 rows × 19 columns
+
+Column names:
+['Age', 'TypeofContact', 'CityTier', 'DurationOfPitch', 'Occupation', 'Gender', 'NumberOfPersonVisiting', 'NumberOfFollowups', 'ProductPitched', 'PreferredPropertyStar', 'MaritalStatus', 'NumberOfTrips', 'Passport', 'PitchSatisfactionScore', 'OwnCar', 'NumberOfChildrenVisiting', 'Designation', 'MonthlyIncome', 'ProdTaken']
+
+======================================================================
+STEP 2: TARGET DISTRIBUTION (IMBALANCE CHECK)
+======================================================================
+ProdTaken
+0    2589
+1     619
+Name: count, dtype: int64
+
+Percentage:
+ProdTaken
+0    0.807045
+1    0.192955
+Name: proportion, dtype: float64
+
+======================================================================
+STEP 3: MISSING VALUES HANDLING
+======================================================================
+
+Missing values BEFORE handling:
+Series([], dtype: int64)
+
+Missing values AFTER handling:
+Series([], dtype: int64)
+
+======================================================================
+STEP 4: DUPLICATE CHECK
+======================================================================
+Total duplicate rows: 0
+
+======================================================================
+STEP 5: FEATURE ENGINEERING - CLEANING
+======================================================================
+
+Fixing Gender inconsistencies...
+Unique Gender values: <StringArray>
+['male', 'female']
+Length: 2, dtype: str
+
+======================================================================
+STEP 6: DurationOfPitch OUTLIER ANALYSIS
+======================================================================
+Min DurationOfPitch: 5.0
+Max DurationOfPitch: 127.0
+Rows with DurationOfPitch > 60: 1
+
+Sample of extreme values:
+     DurationOfPitch  ProdTaken
+406            127.0          0
+
+Decision: Keep values (no removal).
+
+======================================================================
+STEP 7: TRAIN/TEST SPLIT
+======================================================================
+Dropped rows with missing target: 0
+
+Train set: 2406 rows
+Test set: 802 rows
+
+Train Target Distribution:
+ProdTaken
+0    0.807149
+1    0.192851
+Name: proportion, dtype: float64
+
+Test Target Distribution:
+ProdTaken
+0    0.806733
+1    0.193267
+Name: proportion, dtype: float64
+
+======================================================================
+STEP 8: SAVING CLEANED DATA
+======================================================================
+
+Files saved:
+data/train_data.csv
+data/test_data.csv
+
+======================================================================
+DATA PREPARATION COMPLETE!
+======================================================================
